@@ -1,29 +1,19 @@
-#!/bin/sh
+#Material form components without images or javascript.
 
-die () {
-	echo "$*" >&2
-	exit 1
-}
-
-case "$1" in
-*/.git/*) ;; # needs LF line endings
-*) exec notepad.exe "$1" || die "Could not launch notepad.exe";;
-esac
-
-test $# = 1 ||
-die "Usage: $0 <file>"
-
-if test -f "$1"
-then
-	unix2dos.exe "$1"
-fi &&
-notepad.exe "$1" &&
-dos2unix.exe "$1" &&
-case "$1" in
-*/COMMIT_EDITMSG|*\\COMMIT_EDITMSG)
-	! columns="$(git config format.commitmessagecolumns)" || {
-		msg="$(fmt.exe -s -w "$columns" "$1")" &&
-		printf "%s" "$msg" >"$1"
-	}
-	;;
-esac
+##Features
+*Multiple form inputs
+*CSS3 material effects on inputs
+*Pure CSS3 HTML5 design
+*File inputs / uploaders
+*CSS3 checkboxes + Radios
+*CSS3 toggle switches
+*CSS3 star rating widgets
+*500+ Fontawesome vector icons
+*Animated information tooltips
+*Form error, success and disabled states
+*Cross Browser and device for tablets and mobile
+**Retina ready design
+*Responsive design
+*12 column grid
+*9 theme colors
+*CSS3 buttons
